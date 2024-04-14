@@ -1,5 +1,7 @@
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+# -- Variables --
+
 userInput = input()
 validOption = "Please Enter A Valid Option"
 Secret_1 = False
@@ -7,7 +9,6 @@ Secret_2 = False
 Weapon = False
 
 # -- Levels --
-
 # Main Hall
 def intro():
   directions = ['Left', 'Forward','Right']
@@ -15,7 +16,7 @@ def intro():
   userInput = ""
   while userInput not in directions:
     print("Options: left/right/backward/forward")
-  #userinput = input() ?
+  #userinput = input() ? Liam - Check this
     if userInput() == "Left":
       Stairs()
     elif userInput == "Right":
@@ -30,7 +31,8 @@ def intro():
 #Stairs
 def Stairs():
   directions = ['Forward', 'Backward', 'Right']
-  print("You are stood at the foot of a large staircase. At the top you see a window. Beyond it, there is nothing but the harsh red wasteland of Mars. You wonder how on earth you're ever going to get home from this hell.")
+  print("You are stood at the foot of a large staircase. At the top you see a window. Beyond it, there is nothing but the harsh red wasteland of Mars.") 
+  print("You wonder how on earth you're ever going to get home from this hell.")
   userInput = ""
   while userInput not in directions: 
     print("Options: right/backward/forward")
@@ -129,7 +131,7 @@ def Soldier_room():
     else :
       print(validOption())
 
-#Imp Room
+#Imp Room -- NOT FINISHED
 def Imp_room():
   directions = ['Forward', 'Backward', 'Right', 'Left']
   print)
@@ -185,10 +187,7 @@ def Exit():
   print("Redirecting to Main Menu...")
   title()          
 
-
-
-
-
+# -- Title Card -- 
 # Intro Scene
 def title():
   if __name__ == "__main__":
@@ -204,7 +203,3 @@ def title():
       print("Entering: 'The Hangar'...")
       print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
       intro()
-
-#add extra room
-
-
