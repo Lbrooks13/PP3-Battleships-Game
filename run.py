@@ -134,7 +134,6 @@ def Soldier_room():
 #Imp Room -- NOT FINISHED
 def Imp_room():
   directions = ['Forward', 'Backward', 'Right', 'Left']
-  print)
 
 
 #Secret B
@@ -177,12 +176,19 @@ def Exit():
   print("Hangar : Finished")
   if Weapon == True :
     print("You found the shotgun.")
+    print("Kills : 100%")
   elif Secret_1 == True :
     print("You found Secret A.")
+    print("Secrets : 50%")
   elif Secret_2 == True :
     print("You found Secret B.")
+    print("Secrets : 100%")
   else :
+    print("Kills : 0%")
+    print("Secrets : 0%")
     print ("You didnt find any secrets or weapons. Back to basic training for you, Marine...")
+  print("Entering : Nuclear Plant...")
+  print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
   print("Thank you for playing MooD!")
   print("Redirecting to Main Menu...")
   title()          
