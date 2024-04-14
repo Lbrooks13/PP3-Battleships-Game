@@ -195,7 +195,7 @@ def Exit():
 
 # -- Title Card -- 
 # Intro Scene
-def title():
+def title(): #Check if this is stopping the game running
   if __name__ == "__main__":
     while True:
       print("Welcome to MooD")
