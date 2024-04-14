@@ -122,7 +122,7 @@ def Soldier_room():
         print("The soldiers charge at you and begin dismembering you whilst you're still alive...")
         print("It's dangerous to go alone, you should have found a weapon...")
         print("YOU HAVE DIED")
-        intro()
+        title()
     elif userInput == "Run":
       print("You know when you're out-gunned. Maybe you should arm yourself before taking these guys on.")
       Enemy_room()
@@ -139,33 +139,33 @@ def Imp_room():
 def secret_B():
   directions = ['Backward']
   global Secret_2
-  print("You find a skull shaped switch on the wall. You press the skull and it's eyes glow red.")
-  print("The area of wall to your left raises up revealing a secret area.")
-  print("Inside you find a Medikit")
-  print("The wall closes and the skull reverts back to normal")
-  print("Options: backward")
-  if userInput == "Backward":
-    print("You turn around to face the tall room.")
-    Imp_room()
-  else:
-    print(validOption())
+  userInput = ""
+  while userInput not in directions:
+    print("You find a skull shaped switch on the wall. You press the skull and it's eyes glow red.")
+    print("The area of wall to your left raises up revealing a secret area.")
+    print("Inside you find a Medikit")
+    print("The wall closes and the skull reverts back to normal")
+    print("Options: backward")
+    if userInput == "Backward":
+      print("You turn around to face the tall room.")
+      Imp_room()
+    else:
+      print(validOption())
 
 
 
 #Poison Room
 def Poison_room():
-  directions = []
-  print("You open the door to find a pitch black room.")
-  print("You step out and fall into a poison filled void.")
-  print("You look up in desperation but see no way out. The fumes and toxins envelop you.")
-  print("You let out a final gasp as death takes its hold on you")
-  print("YOU HAVE DIED")
-  intro()
+    print("You open the door to find a pitch black room.")
+    print("You step out and fall into a poison filled void.")
+    print("You look up in desperation but see no way out. The fumes and toxins envelop you.")
+    print("You let out a final gasp as death takes its hold on you")
+    print("YOU HAVE DIED")
+    title()
 
 
 #Courtyard
 def Courtyard():
-  directions = []
   print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
   print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
   intro()
@@ -183,26 +183,27 @@ def Exit():
     print ("You didnt find any secrets or weapons. Back to basic training for you, Marine...")
   print("Thank you for playing MooD!")
   print("Redirecting to Main Menu...")
-  intro()          
+  title()          
 
 
 
 
 
 # Intro Scene
-if __name__ == "__main__":
-  while True:
-    print("Welcome to MooD")
-    print("You are a space marine, stranded on Mars.")
-    print("From behind a huge door you hear snarling and the cries of your former marine comrades being devoured by demons.")
-    print("You must maneuver through the Mars base to find safety.")
-    print("You can choose to walk in multiple directions to find a way out.")
-    print("Let's start with your callsign: ")
-    callsign = input()
-    print("Good luck, " +callsign+ ".")
-    print("Entering: 'The Hangar'...")
-    print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
-    intro()
+def title():
+  if __name__ == "__main__":
+    while True:
+      print("Welcome to MooD")
+      print("You are a space marine, stranded on Mars.")
+      print("From behind a huge door you hear snarling and the cries of your former marine comrades being devoured by demons.")
+      print("You must maneuver through the Mars base to find safety.")
+      print("You can choose to walk in multiple directions to find a way out.")
+      print("Let's start with your callsign: ")
+      callsign = input()
+      print("Good luck, " +callsign+ ".")
+      print("Entering: 'The Hangar'...")
+      print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
+      intro()
 
 #add extra room
 
