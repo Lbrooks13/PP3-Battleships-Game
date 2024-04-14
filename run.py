@@ -132,14 +132,43 @@ def Soldier_room():
 #Imp Room
 def Imp_room():
   directions = ['Forward', 'Backward', 'Right', 'Left']
-  print()
+  print)
+
 
 #Secret B
 def secret_B():
   directions = ['Backward']
   global Secret_2
+  print("You find a skull shaped switch on the wall. You press the skull and it's eyes glow red.")
+  print("The area of wall to your left raises up revealing a secret area.")
+  print("Inside you find a Medikit")
+  print("The wall closes and the skull reverts back to normal")
+  print("Options: backward")
+  if userInput == "Backward":
+    print("You turn around to face the tall room.")
+    Imp_room()
+  else:
+    print(validOption())
 
-   
+
+
+#Poison Room
+def Poison_room():
+  directions = []
+  print("You open the door to find a pitch black room.")
+  print("You step out and fall into a poison filled void.")
+  print("You look up in desperation but see no way out. The fumes and toxins envelop you.")
+  print("You let out a final gasp as death takes its hold on you")
+  print("YOU HAVE DIED")
+  intro()
+
+
+#Courtyard
+def Courtyard():
+  directions = []
+  print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
+  print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
+  intro()
 
 
 
@@ -160,6 +189,6 @@ if __name__ == "__main__":
     print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
     intro()
 
-
+#add extra room
 
 
