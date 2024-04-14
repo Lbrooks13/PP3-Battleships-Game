@@ -170,6 +170,21 @@ def Courtyard():
   print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
   intro()
 
+#Exit
+def Exit():
+  print("Hangar : Finished")
+  if Weapon == True :
+    print("You found the shotgun.")
+  elif Secret_1 == True :
+    print("You found Secret A.")
+  elif Secret_2 == True :
+    print("You found Secret B.")
+  else :
+    print ("You didnt find any secrets or weapons. Back to basic training for you, Marine...")
+  print("Thank you for playing MooD!")
+  print("Redirecting to Main Menu...")
+  intro()          
+
 
 
 
