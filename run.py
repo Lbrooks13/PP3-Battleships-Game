@@ -231,6 +231,7 @@ def Courtyard():
   intro()
 
 #Exit
+# Liam - Fix bug on elif argument
 def Exit():
   Clear_terminal()
   print("Hangar : Finished")
