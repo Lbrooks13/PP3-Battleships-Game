@@ -202,6 +202,7 @@ def Courtyard():
   Clear_terminal()
   print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
   print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
+  input("Press Enter to continue")
   intro()
 
 #Exit
