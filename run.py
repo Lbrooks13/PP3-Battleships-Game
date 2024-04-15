@@ -162,6 +162,31 @@ def Soldier_room():
 def Imp_room():
   Clear_terminal()
   directions = ['Forward', 'Backward', 'Right', 'Left']
+  print("THIS AREA IS NOT FINISHED")
+  userInput = ""
+  while userInput.capitalize() not in directions:
+    print("OPTIONS NOT FINIISHED YET")
+    userInput = input("Make your selection: ")
+    if userInput.capitalize() == "Forward":
+      print("PLACEHOLDER")
+      print("Press Enter to continue")
+      Poison_room()
+    elif userInput.capitalize() == "Left":
+      print("PLACEHOLDER")
+      print("Press Enter to continue")
+      secret_B()
+    elif userInput.capitalize() == "Right":
+      print("PLACEHOLDER")
+      print("Press Enter to continue")
+      Exit()
+    elif userInput.capitalize() == "Backward":
+      print("PLACEHOLDER")
+      print("Press Enter to continue")
+      Enemy_room()
+    else :
+      print(validOption)    
+
+    
 
 
 #Secret B
