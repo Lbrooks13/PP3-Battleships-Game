@@ -225,6 +225,7 @@ def Exit():
   print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
   print("Thank you for playing MooD!")
   print("Redirecting to Main Menu...")
+  input("Press Enter to continue")
   start()          
 
 # -- Title Card -- 
@@ -241,6 +242,7 @@ def start():
   print("Good luck, " +callsign+ ".")
   print("Entering: 'The Hangar'...")
   print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
+  input("Press Enter to continue")
   intro()
 
 start()
