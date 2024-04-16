@@ -8,7 +8,8 @@ validOption = "Please Enter A Valid Option"
 Secret_1 = False
 Secret_2 = False
 Weapon = False
-
+list_dir = ['North', 'East', 'South', 'West']
+player_dir = "Options : North / East / South / West"
 
 def Clear_terminal() :
   os.system('cls')
@@ -16,19 +17,19 @@ def Clear_terminal() :
 # Main Hall
 def intro():
   Clear_terminal()
-  directions = ['Left', 'Forward','Right']
+  directions = ['North', 'East', 'South','West']
   print("You are stood in a large open area. It is dimly lit, with rusted walls. They are splattered in blood, the remains of your former regiment are scattered across the floor.")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print("Options: left/right/backward/forward")
+    print(player_dir)
     userInput = input("Make your selection: ")
-    if userInput.capitalize() == "Left":
+    if userInput.capitalize() == "West":
       Stairs()
-    elif userInput.capitalize() == "Right":
+    elif userInput.capitalize() == "East":
       Courtyard()
-    elif userInput.capitalize() == "Forward":
+    elif userInput.capitalize() == "North":
       Enemy_room()
-    elif userInput.capitalize() == "Backward":
+    elif userInput.capitalize() == "South":
       print("You can't chicken out now, Marine.")
     else :
       print(validOption)
@@ -43,20 +44,22 @@ def intro():
 #Stairs
 def Stairs():
   Clear_terminal()
-  directions = ['Forward', 'Backward', 'Right']
+  directions = ['North', 'East', 'South', 'West']
   print("You are stood at the foot of a large staircase. At the top you see a window. Beyond it, there is nothing but the harsh red wasteland of Mars.") 
   print("You wonder how on earth you're ever going to get home from this hell.")
   userInput = ""
   while userInput.capitalize() not in directions: 
-    print("Options: right/backward/forward")
+    print(player_dir)
     userInput = input("Make your selection: ")
-    if userInput.capitalize() == "Right":
+    if userInput.capitalize() == "North":
       Secret_A()
-    elif userInput.capitalize() == "Backward":
+    elif userInput.capitalize() == "East":
       print("You are travelling towards the Main Hall")
       input(continue_game)
       intro()
-    elif userInput.capitalize() == "Forward":
+    elif userInput.capitalize() == "South":
+      print("There is nothing here but a wall")  
+    elif userInput.capitalize() == "West":
       Weapon_room()
     else :
       print(validOption)  
@@ -73,7 +76,7 @@ def Secret_A():
   print("You place them in your pocket and suddenly, Mars doesn't seem like such a bad place after all...")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print("Options: backward")
+    print(player_dir)
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You step out and the skull switch returns to its normal state")
@@ -95,7 +98,7 @@ def Weapon_room():
   print("'What a time to be alive' you think to yourself as you exhale and load the shotgun 'malisciously'")
   userInput = ""
   while userInput.capitalize() not in directions: 
-    print("Options: backward")
+    print(player_dir)
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You walk down the stairs and are now at the foot of the stairs. Time to head into the base...")
@@ -113,7 +116,7 @@ def Enemy_room():
   print("You are stood in a corridoor that snakes around to the right, beyond the doors to your right and infront of you, you can hear all manner of demons awaiting your arrival")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print("Options: forward/right/backward")
+    print(player_dir)
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You turn around and go back through the giant steel door. You are now travelling towards the Main Hall")
@@ -171,7 +174,7 @@ def Imp_room():
   print("THIS AREA IS NOT FINISHED")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print("OPTIONS NOT FINIISHED YET")
+    print(player_dir)
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Forward":
       print("PLACEHOLDER")
@@ -205,7 +208,7 @@ def secret_B():
   print("The area of wall to your left raises up revealing a secret area.")
   print("Inside you find a Medikit")
   print("The wall closes and the skull reverts back to normal")
-  print("Options: backward")
+  print(player_dir)
   userInput = ""
   while userInput.capitalize() not in directions:
     userInput = input("Make your selection: ")
