@@ -279,7 +279,7 @@ def start():
   callsign = input("Let's start with your callsign: ")
   print("Good luck, " +callsign+ ".")
   print("Entering: 'The Hangar'...")
-  print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
+  print("For a truly immersive experience please open this link in your web browser whilst playing the game 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
   input(continue_game)
   intro()
 
