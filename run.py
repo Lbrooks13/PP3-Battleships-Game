@@ -1,65 +1,62 @@
-
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-# -- Variables --
 import os
 
+# -- Variables --
 continue_game = "Press Enter to continue"
 validOption = "Please Enter A Valid Option"
 Secret_1 = False
 Secret_2 = False
 Weapon = False
-list_dir = ['North', 'East', 'South', 'West']
-player_dir = "Options : North / East / South / West"
 
+# -- Functions --
+#Clear terminal
 def Clear_terminal() :
   os.system('cls')
 
+# -- Levels -- 
 # Main Hall
 def intro():
   Clear_terminal()
-  directions = ['North', 'East', 'South','West']
+  directions = ['Left', 'Forward','Right']
   print("You are stood in a large open area. It is dimly lit, with rusted walls. They are splattered in blood, the remains of your former regiment are scattered across the floor.")
+  print("To your left you see a large staircase.")
+  print("To your right you see a window over-looking a courtyard.")
+  print("Behind you is the door you used to enter the facility.")
+  print("Infront of you is a giant door made of steel.")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print(player_dir)
+    print("Options: left/right/backward/forward")
     userInput = input("Make your selection: ")
-    if userInput.capitalize() == "West":
+    if userInput.capitalize() == "Left":
       Stairs()
-    elif userInput.capitalize() == "East":
+    elif userInput.capitalize() == "Right":
       Courtyard()
-    elif userInput.capitalize() == "North":
+    elif userInput.capitalize() == "Forward":
       Enemy_room()
-    elif userInput.capitalize() == "South":
+    elif userInput.capitalize() == "Backward":
       print("You can't chicken out now, Marine.")
     else :
       print(validOption)
 
-
-
-
-
-# -- Levels --
-
-
 #Stairs
 def Stairs():
   Clear_terminal()
-  directions = ['North', 'East', 'South', 'West']
+  directions = ['Forward', 'Backward', 'Right']
   print("You are stood at the foot of a large staircase. At the top you see a window. Beyond it, there is nothing but the harsh red wasteland of Mars.") 
   print("You wonder how on earth you're ever going to get home from this hell.")
+  print("To your right there is hidden alcove next to the stairs.")
+  print("Behind you is the door back to the main hall.")
+  print("Infront of you is the staircase.")
   userInput = ""
   while userInput.capitalize() not in directions: 
-    print(player_dir)
+    print("Options: right/backward/forward")
     userInput = input("Make your selection: ")
-    if userInput.capitalize() == "North":
+    if userInput.capitalize() == "Right":
       Secret_A()
-    elif userInput.capitalize() == "East":
+    elif userInput.capitalize() == "Backward":
       print("You are travelling towards the Main Hall")
       input(continue_game)
       intro()
-    elif userInput.capitalize() == "South":
-      print("There is nothing here but a wall")  
-    elif userInput.capitalize() == "West":
+    elif userInput.capitalize() == "Forward":
       Weapon_room()
     else :
       print(validOption)  
@@ -76,10 +73,10 @@ def Secret_A():
   print("You place them in your pocket and suddenly, Mars doesn't seem like such a bad place after all...")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print(player_dir)
+    print("Options: backward")
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
-      print("You step out and the skull switch returns to its normal state")
+      print("You step back and the skull switch returns to its normal state")
       input(continue_game)
       Stairs()
     else:
@@ -96,9 +93,10 @@ def Weapon_room():
   print("You pick up the shotgun and for reasons unknown to man or God, a sinister grin creeps across your face")
   print("You close your eyes for a moment and hear the words 'Rip and Tear' echo through your mind")
   print("'What a time to be alive' you think to yourself as you exhale and load the shotgun 'malisciously'")
+  print("Behind you is the staircase.")
   userInput = ""
   while userInput.capitalize() not in directions: 
-    print(player_dir)
+    print("Options: backward")
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You walk down the stairs and are now at the foot of the stairs. Time to head into the base...")
@@ -114,9 +112,12 @@ def Enemy_room():
   print("You walk up to a giant steel door with a red button in the middle")
   print("You push the button and the whole door raises with a 'whoosh' sound")
   print("You are stood in a corridoor that snakes around to the right, beyond the doors to your right and infront of you, you can hear all manner of demons awaiting your arrival")
+  print("Infront of you is a door.")
+  print("To your right is a corridor leading towards another giant steel door.")
+  print("Behind you is the giant steel door heading back to the main hall.")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print(player_dir)
+    print("Options: forward/right/backward")
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You turn around and go back through the giant steel door. You are now travelling towards the Main Hall")
@@ -167,36 +168,39 @@ def Soldier_room():
     else :
       print(validOption)
 
-#Imp Room -- NOT FINISHED
+#Imp Room
 def Imp_room():
   Clear_terminal()
   directions = ['Forward', 'Backward', 'Right', 'Left']
-  print("THIS AREA IS NOT FINISHED")
+  print("The giant door raises up. You are now stood in a tall room.")
+  print("Above you there is a window overlooking the area. You can just make-out something wandering aimlessly through the room")
+  print("Is it human?")
+  print("Infront of you is a small door with a yellow sign on the door. 'BIOLOGICAL HAZZARD : BEWARE'.")
+  print("To your left is a skull shaped switch on the door.")
+  print ("To your right is a small door. A red EXIT sign is hung above.")
+  print("Behind you is the door back to the previous room.")
   userInput = ""
   while userInput.capitalize() not in directions:
-    print(player_dir)
+    print("Options : forward/backward/left/right")
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Forward":
-      print("PLACEHOLDER")
+      print("You walk up to the biohazard door. There is a small green button to your right. You press it and the door slides open.")
       input(continue_game)
       Poison_room()
     elif userInput.capitalize() == "Left":
-      print("PLACEHOLDER")
+      print("You turn to face the skull shaped switch.")
       input(continue_game)
       secret_B()
     elif userInput.capitalize() == "Right":
-      print("PLACEHOLDER")
+      print("You walk past a large drum of radioactive waste. This door must lead to the Nuclear Plant...")
       input(continue_game)
       Exit()
     elif userInput.capitalize() == "Backward":
-      print("PLACEHOLDER")
+      print("You turn around and head back towards the previous room.")
       input(continue_game)
       Enemy_room()
     else :
       print(validOption)    
-
-    
-
 
 #Secret B
 def secret_B():
@@ -204,11 +208,11 @@ def secret_B():
   directions = ['Backward']
   global Secret_2
   Secret_2 = True
-  print("You find a skull shaped switch on the wall. You press the skull and it's eyes glow red.")
+  print("You press the skull and it's eyes glow red. You a hear a 'THUNK' from behind the switch.")
   print("The area of wall to your left raises up revealing a secret area.")
-  print("Inside you find a Medikit")
-  print("The wall closes and the skull reverts back to normal")
-  print(player_dir)
+  print("Inside you find a Medikit.")
+  print("The wall closes and the skull reverts back to normal.")
+  print("Options: backward")
   userInput = ""
   while userInput.capitalize() not in directions:
     userInput = input("Make your selection: ")
@@ -219,25 +223,22 @@ def secret_B():
     else:
       print(validOption)
 
-
-
 #Poison Room
 def Poison_room():
   Clear_terminal()
-  print("You open the door to find a pitch black room.")
+  print("The door opens to reveal a pitch black room.")
   print("You step out and fall into a poison filled void.")
   print("You look up in desperation but see no way out. The fumes and toxins envelop you.")
-  print("You let out a final gasp as death takes its hold on you")
+  print("You let out a final gasp as death takes its hold on you.")
   print("YOU HAVE DIED")
   input(continue_game)
   start()
-
 
 #Courtyard
 def Courtyard():
   Clear_terminal()
   print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
-  print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
+  print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry.")
   input(continue_game)
   intro()
 
@@ -247,7 +248,7 @@ def Exit():
   Clear_terminal()
   print("Hangar : Finished")
   if Weapon == True :
-    print("You found the shotgun.")
+    print("You found the Shotgun.")
     print("Kills : 100%")
   elif Secret_1 == True :
     print("You found Secret A.")
