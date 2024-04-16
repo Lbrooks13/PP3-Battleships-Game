@@ -3,7 +3,7 @@
 # -- Variables --
 import os
 
-
+continue_game = "Press Enter to continue"
 validOption = "Please Enter A Valid Option"
 Secret_1 = False
 Secret_2 = False
@@ -54,6 +54,7 @@ def Stairs():
       Secret_A()
     elif userInput.capitalize() == "Backward":
       print("You are travelling towards the Main Hall")
+      input(continue_game)
       intro()
     elif userInput.capitalize() == "Forward":
       Weapon_room()
@@ -76,6 +77,7 @@ def Secret_A():
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You step out and the skull switch returns to its normal state")
+      input(continue_game)
       Stairs()
     else:
       print(validOption)
@@ -97,6 +99,7 @@ def Weapon_room():
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You walk down the stairs and are now at the foot of the stairs. Time to head into the base...")
+      input(continue_game)
       Stairs()
     else: 
       print(validOption)
@@ -114,14 +117,17 @@ def Enemy_room():
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You turn around and go back through the giant steel door. You are now travelling towards the Main Hall")
+      input(continue_game)
       intro()
     elif userInput.capitalize() == "Forward":
       print("You walk towards the door infront of you. You can hear footsteps beyond the door. They sound like marching boots on a metal floor.")
       print("Could it be your team? Are they still alive?")
+      input(continue_game)
       Soldier_room()
     elif userInput.capitalize() == "Right":
       print("You walk towards another giant steel door on your right. You go to press the button to open it, but as you do you hear the dintinct sound of flesh being tore from bone")
       print("A snarl is the only clue of what awaits behind the door. But whatever it is, it doesnt sound like anything born of Earth...")
+      input(continue_game)
       Imp_room()
     else :
       print(validOption)
@@ -142,18 +148,18 @@ def Soldier_room():
         print("After blowing a hole clean through the first soliders chest, you reload.")
         print("You run towards the second marine, shoving the end of the barrel in his snarling mouth. You squeeze the trigger and redecorate the east wall with whats left of his brains")
         print("Satisfied with your kills, you head back towards the square room. Let's find out whats behind door number 2...")
-        input("Press enter to continue")
+        input(continue_game)
         Enemy_room()
       else :
         print("You rookie. You went and brought a knife to a gun fight.")
         print("The soldiers charge at you and begin dismembering you whilst you're still alive...")
         print("It's dangerous to go alone, you should have found a weapon...")
         print("YOU HAVE DIED")
-        input("Press Enter to continue")
+        input(continue_game)
         start()
     elif userInput.capitalize() == "Run":
       print("You know when you're out-gunned. Maybe you should arm yourself before taking these guys on.")
-      input("Press Enter to continue")
+      input(continue_game)
       Enemy_room()
     else :
       print(validOption)
@@ -169,19 +175,19 @@ def Imp_room():
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Forward":
       print("PLACEHOLDER")
-      print("Press Enter to continue")
+      input(continue_game)
       Poison_room()
     elif userInput.capitalize() == "Left":
       print("PLACEHOLDER")
-      print("Press Enter to continue")
+      input(continue_game)
       secret_B()
     elif userInput.capitalize() == "Right":
       print("PLACEHOLDER")
-      print("Press Enter to continue")
+      input(continue_game)
       Exit()
     elif userInput.capitalize() == "Backward":
       print("PLACEHOLDER")
-      print("Press Enter to continue")
+      input(continue_game)
       Enemy_room()
     else :
       print(validOption)    
@@ -205,6 +211,7 @@ def secret_B():
     userInput = input("Make your selection: ")
     if userInput.capitalize() == "Backward":
       print("You turn around to face the tall room.")
+      input(continue_game)
       Imp_room()
     else:
       print(validOption)
@@ -219,6 +226,7 @@ def Poison_room():
   print("You look up in desperation but see no way out. The fumes and toxins envelop you.")
   print("You let out a final gasp as death takes its hold on you")
   print("YOU HAVE DIED")
+  input(continue_game)
   start()
 
 
@@ -227,7 +235,7 @@ def Courtyard():
   Clear_terminal()
   print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
   print("The whole area is filled with demons... Maybe you'd better sit this one out until you can find more substantial weaponry")
-  input("Press Enter to continue")
+  input(continue_game)
   intro()
 
 #Exit
@@ -252,12 +260,11 @@ def Exit():
   print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
   print("Thank you for playing MooD!")
   print("Redirecting to Main Menu...")
-  input("Press Enter to continue")
+  input(continue_game)
   start()          
 
 # -- Title Card -- 
 # Intro Scene
-
 def start():
   Clear_terminal()
   print("Welcome to MooD")
@@ -269,7 +276,7 @@ def start():
   print("Good luck, " +callsign+ ".")
   print("Entering: 'The Hangar'...")
   print("For a truly immersive experience please follow this link 'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
-  input("Press Enter to continue")
+  input(continue_game)
   intro()
 
 start()
