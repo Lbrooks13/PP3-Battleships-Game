@@ -18,6 +18,11 @@ def clear_terminal() :
   os.system('cls')
 
 
+def exit_game():
+  print("Don't worry, i'm scared of the dark too...")
+  input (continue_game)
+  start()
+
  #  -- Levels -- 
 
  #  Main Hall
