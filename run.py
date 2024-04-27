@@ -47,11 +47,11 @@ def intro():
     print("Options: left/right/backward/forward")
     user_input = input("Make your selection: ")
     if user_input.capitalize() == "Left":
-      Stairs()
+      stairs()
     elif user_input.capitalize() == "Right":
-      Courtyard()
+      courtyard()
     elif user_input.capitalize() == "Forward":
-      Enemy_room()
+      enemy_room()
     elif user_input.capitalize() == "Backward":
       print("You can't chicken out now, Marine.")
     else :
@@ -60,7 +60,7 @@ def intro():
 
  #  Stairs
 
-def Stairs():
+def stairs():
   clear_terminal()
   directions = ['Forward', 'Backward', 'Right']
   print("You are stood at the foot of a large staircase. At the top you see a window. Beyond it, there is nothing but the harsh red wasteland of Mars.")
@@ -77,7 +77,7 @@ def Stairs():
     print("Options: right/backward/forward")
     user_input = input("Make your selection: ")
     if user_input.capitalize() == "Right":
-      Secret_A()
+      secret_A()
     elif user_input.capitalize() == "Backward":
       print("You are travelling towards the Main Hall")
       input(continue_game)
@@ -90,7 +90,7 @@ def Stairs():
 
  #  Secret A
 
-def Secret_A():
+def secret_A():
   clear_terminal()
   directions = ['Backward']
   global SECRET_1
@@ -109,7 +109,7 @@ def Secret_A():
     if user_input.capitalize() == "Backward":
       print("You step back and the skull switch returns to its normal state")
       input(continue_game)
-      Stairs()
+      stairs()
     else:
       print(valid_option)
 
@@ -139,14 +139,14 @@ def weapon_room():
     if user_input.capitalize() == "Backward":
       print("You walk down the stairs and are now at the foot of the stairs. Time to head into the base...")
       input(continue_game)
-      Stairs()
+      stairs()
     else: 
       print(valid_option)
 
 
  #  Enemy Room
 
-def Enemy_room():
+def enemy_room():
   clear_terminal()
   directions = ['Forward', 'Backward', 'Right']
   print("You walk up to a giant steel door with a red button in the middle")
@@ -173,20 +173,20 @@ def Enemy_room():
       time.sleep(0.2)
       print("Could it be your team? Are they still alive?")
       input(continue_game)
-      Soldier_room()
+      soldier_room()
     elif user_input.capitalize() == "Right":
       print("You walk towards another giant steel door on your right. You go to press the button to open it, but as you do you hear the dintinct sound of flesh being tore from bone")
       time.sleep(0.2)
       print("A snarl is the only clue of what awaits behind the door. But whatever it is, it doesnt sound like anything born of Earth...")
       input(continue_game)
-      Imp_room()
+      imp_room()
     else :
       print(valid_option)
 
 
  #  Soldier Room
 
-def Soldier_room():
+def soldier_room():
   global WEAPON
   clear_terminal()
   directions =['Fight', 'Run']
@@ -207,7 +207,7 @@ def Soldier_room():
         time.sleep(0.2)
         print("Satisfied with your kills, you head back towards the square room. Let's find out whats behind door number 2...")
         input(continue_game)
-        Enemy_room()
+        enemy_room()
       else :
         print("You rookie. You went and brought a knife to a gun fight.")
         time.sleep(0.2)
@@ -221,14 +221,14 @@ def Soldier_room():
     elif user_input.capitalize() == "Run":
       print("You know when you're out-gunned. Maybe you should arm yourself before taking these guys on.")
       input(continue_game)
-      Enemy_room()
+      enemy_room()
     else :
       print(valid_option)
 
 
  #  Imp Room
 
-def Imp_room():
+def imp_room():
   clear_terminal()
   directions = ['Forward', 'Backward', 'Right', 'Left']
   print("The giant door raises up. You are now stood in a tall room.")
@@ -241,7 +241,7 @@ def Imp_room():
   time.sleep(0.2)
   print("To your left is a skull shaped switch on the door.")
   time.sleep(0.2)
-  print ("To your right is a small door. A red EXIT sign is hung above.")
+  print ("To your right is a small door. A red exit sign is hung above.")
   time.sleep(0.2)
   print("Behind you is the door back to the previous room.")
   user_input = ""
@@ -251,7 +251,7 @@ def Imp_room():
     if user_input.capitalize() == "Forward":
       print("You walk up to the biohazard door. There is a small green button to your right. You press it and the door slides open.")
       input(continue_game)
-      Poison_room()
+      poison_room()
     elif user_input.capitalize() == "Left":
       print("You turn to face the skull shaped switch.")
       input(continue_game)
@@ -259,11 +259,11 @@ def Imp_room():
     elif user_input.capitalize() == "Right":
       print("You walk past a large drum of radioactive waste. This door must lead to the Nuclear Plant...")
       input(continue_game)
-      Exit()
+      exit()
     elif user_input.capitalize() == "Backward":
       print("You turn around and head back towards the previous room.")
       input(continue_game)
-      Enemy_room()
+      enemy_room()
     else :
       print(valid_option)    
 
@@ -290,14 +290,14 @@ def secret_B():
     if user_input.capitalize() == "Backward":
       print("You turn around to face the tall room.")
       input(continue_game)
-      Imp_room()
+      imp_room()
     else:
       print(valid_option)
 
 
  #  Poison Room
 
-def Poison_room():
+def poison_room():
   clear_terminal()
   print("The door opens to reveal a pitch black room.")
   time.sleep(0.2)
@@ -312,9 +312,9 @@ def Poison_room():
   start()
 
 
- #  Courtyard
+ #  courtyard
 
-def Courtyard():
+def courtyard():
   clear_terminal()
   print("You gaze out through the window to an open area. The red sun beaming down onto the harsh Martian landscape.")
   time.sleep(0.2)
@@ -323,9 +323,9 @@ def Courtyard():
   intro()
 
 
- #  Exit
+ #  exit
 
-def Exit():
+def exit():
   global WEAPON
   global SECRET_1
   global SECRET_2
