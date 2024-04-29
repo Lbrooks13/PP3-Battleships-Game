@@ -15,13 +15,13 @@ global WEAPON
 
  #  Clear terminal
 def clear_terminal() :
-  os.system('cls')
+  os.system('cls' if os.name == "nt" else "clear")
 
 
 def exit_game():
-  print("Don't worry, i'm scared of the dark too...")
-  input (continue_game)
-  start()
+  clear_terminal()
+  print("Don't worry, i'm scared of the dark too...\n")
+  exit()
 
  #  -- Levels -- 
 
@@ -29,7 +29,7 @@ def exit_game():
 
 def intro():
   clear_terminal()
-  directions = ['Left', 'Forward','Right']
+  directions = ['Left', 'Forward','Right', 'Exit']
   print("You are stood in a large open area.")
   time.sleep(1)
   print("It is dimly lit, with rusted walls.") 
@@ -49,16 +49,18 @@ def intro():
   time.sleep(1)
   user_input = ""
   while user_input.capitalize() not in directions:
-    print("Options: left/right/backward/forward")
-    user_input = input("Make your selection: ")
-    if user_input.capitalize() == "Left":
+    print("Options: left/right/backward/forward/exit")
+    user_input = input("Make your selection: ").capitalize()
+    if user_input == "Left":
       stairs()
-    elif user_input.capitalize() == "Right":
+    elif user_input == "Right":
       courtyard()
-    elif user_input.capitalize() == "Forward":
+    elif user_input == "Forward":
       enemy_room()
-    elif user_input.capitalize() == "Backward":
+    elif user_input == "Backward":
       print("You can't chicken out now, Marine.")
+    elif user_input == "Exit":
+      exit_game()  
     else :
       print(valid_option)
 
@@ -300,7 +302,7 @@ def imp_room():
       print("You walk past a large drum of radioactive waste. "
             "This door must lead to the Nuclear Plant...")
       input(continue_game)
-      exit()
+      exit_level()
     elif user_input.capitalize() == "Backward":
       print("You turn around and head back towards the previous room.")
       input(continue_game)
@@ -371,7 +373,7 @@ def courtyard():
 
  #  exit
 
-def exit():
+def exit_level():
   global WEAPON
   global SECRET_1
   global SECRET_2
@@ -426,8 +428,14 @@ def start():
         "former marine comrades being devoured by demons.")
   print("You must maneuver through the Mars base to find safety.")
   print("You can choose to walk in multiple directions to find a way out.")
-  callsign = input("Let's start with your callsign: ")
-  print("Good luck, " +callsign+ ".")
+  while True:
+    callsign = input("Let's start with your callsign: ")
+    clear_terminal()
+    if callsign.isalpha():
+      print("Good luck, " +callsign+ ".")
+      break
+    else:
+      print(f"{callsign} is not valid. Please use letters only.")
   print("Entering: 'The Hangar'...")
   print("For a truly immersive experience please open this link in your web "
         "browser whilst playing the game "
