@@ -4,8 +4,8 @@ import time
 
  #  -- Variables --
 
-continue_game = "Press Enter to continue"
-valid_option = "Please Enter A Valid Option"
+continue_game = "\nPress Enter to continue"
+valid_option = "\nPlease Enter A Valid Option"
 global SECRET_1
 global SECRET_2
 global WEAPON
@@ -68,8 +68,12 @@ def intro():
  #  Stairs
 
 def stairs():
+  global SECRET_1
   clear_terminal()
-  directions = ['Forward', 'Backward', 'Right']
+  if SECRET_1:
+    directions = ['Forward', 'Backward']
+  else:
+    directions = ['Forward', 'Backward', 'Right']
   print(
     "You are stood at the foot of a large staircase. "
     "At the top you see a window. Beyond it, "
@@ -83,11 +87,17 @@ def stairs():
   time.sleep(1)
   print("Infront of you is the staircase.")
   user_input = ""
-  while user_input.capitalize() not in directions: 
-    print("Options: right/backward/forward")
+  while user_input.capitalize() not in directions:
+    if SECRET_1:
+      print("Options: backward/forward")
+    else:  
+      print("Options: right/backward/forward")
     user_input = input("Make your selection: ")
     if user_input.capitalize() == "Right":
-      secret_A()
+      if not SECRET_1:
+        secret_A()
+      else:
+        print("You have already operated this switch")  
     elif user_input.capitalize() == "Backward":
       print("You are travelling towards the Main Hall")
       input(continue_game)
@@ -424,7 +434,7 @@ def start():
   clear_terminal()
   print("Welcome to MooD")
   print("You are a space marine, stranded on Mars.")
-  print("From behind a huge door you hear snarling and the cries of your "
+  print("From behind a huge door you hear snarling and the cries of your \n"
         "former marine comrades being devoured by demons.")
   print("You must maneuver through the Mars base to find safety.")
   print("You can choose to walk in multiple directions to find a way out.")
@@ -437,8 +447,8 @@ def start():
     else:
       print(f"{callsign} is not valid. Please use letters only.")
   print("Entering: 'The Hangar'...")
-  print("For a truly immersive experience please open this link in your web "
-        "browser whilst playing the game "
+  print("For a truly immersive experience please open this link in your web \n"
+        "browser whilst playing the game \n"
         "'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
   input(continue_game)
   intro()
