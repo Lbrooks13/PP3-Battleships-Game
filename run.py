@@ -91,7 +91,7 @@ def stairs():
     if SECRET_1:
       print("Options: backward/forward")
     else:  
-      print("Options: right/backward/forward")
+      print("Options: right/backward/forward/exit")
     user_input = input("Make your selection: ")
     if user_input.capitalize() == "Right":
       if not SECRET_1:
@@ -104,6 +104,8 @@ def stairs():
       intro()
     elif user_input.capitalize() == "Forward":
       weapon_room()
+    elif user_input.capitalize() == "Exit":
+      exit_game()  
     else :
       print(valid_option)  
 
@@ -177,7 +179,7 @@ def weapon_room():
 
 def enemy_room():
   clear_terminal()
-  directions = ['Forward', 'Backward', 'Right']
+  directions = ['Forward', 'Backward', 'Right', 'Exit']
   print("You walk up to a giant steel door with a red button in the middle")
   time.sleep(0.5)
   print("You push the button and the whole door raises with a 'whoosh' sound")
@@ -217,6 +219,8 @@ def enemy_room():
             "But whatever it is, it doesnt sound like anything born of Earth...")
       input(continue_game)
       imp_room()
+    elif user_input.capitalize() == "Exit":
+      exit_game()  
     else :
       print(valid_option)
 
@@ -226,7 +230,7 @@ def enemy_room():
 def soldier_room():
   global WEAPON
   clear_terminal()
-  directions =['Fight', 'Run']
+  directions =['Fight', 'Run', 'Exit']
   print("You open the door to find a room with 2 marines inside.\n"
         "However, something isnt right...")
   time.sleep(0.5)
@@ -271,6 +275,8 @@ def soldier_room():
             "before taking these guys on.")
       input(continue_game)
       enemy_room()
+    elif user_input.capitalize() == "Exit":
+      exit_game()  
     else :
       print(valid_option)
 
@@ -279,7 +285,7 @@ def soldier_room():
 
 def imp_room():
   clear_terminal()
-  directions = ['Forward', 'Backward', 'Right', 'Left']
+  directions = ['Forward', 'Backward', 'Right', 'Left', 'Exit']
   print("The giant door raises up. You are now stood in a tall room.")
   time.sleep(0.5)
   print("Above you there is a window overlooking the area. \n"
@@ -317,6 +323,8 @@ def imp_room():
       print("You turn around and head back towards the previous room.")
       input(continue_game)
       enemy_room()
+    elif user_input.capitalize() == "Exit":
+      exit_game()  
     else :
       print(valid_option)    
 
