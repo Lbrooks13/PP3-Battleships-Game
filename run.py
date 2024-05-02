@@ -284,8 +284,12 @@ def soldier_room():
  #  Imp Room
 
 def imp_room():
+  global SECRET_2
   clear_terminal()
-  directions = ['Forward', 'Backward', 'Right', 'Left', 'Exit']
+  if SECRET_2:
+    directions = ['Forward', 'Backward', 'Right', 'Exit']
+  else:
+    directions = ['Forward', 'Backward', 'Right', 'Left', 'Exit']
   print("The giant door raises up. You are now stood in a tall room.")
   time.sleep(0.5)
   print("Above you there is a window overlooking the area. \n"
@@ -303,7 +307,10 @@ def imp_room():
   print("Behind you is the door back to the previous room.")
   user_input = ""
   while user_input.capitalize() not in directions:
-    print("Options : forward/backward/left/right")
+    if SECRET_2:
+      print("Options: forward/backward/right/exit")
+    else:  
+      print("Options : forward/backward/left/right/exit")
     user_input = input("Make your selection: ")
     if user_input.capitalize() == "Forward":
       print("You walk up to the biohazard door. There is a small green button \n"
@@ -311,9 +318,12 @@ def imp_room():
       input(continue_game)
       poison_room()
     elif user_input.capitalize() == "Left":
-      print("You turn to face the skull shaped switch.")
+      if not SECRET_2:
+        secret_B()
+        print("You turn to face the skull shaped switch.")
+      else:
+        print("You have already operated this switch")
       input(continue_game)
-      secret_B()
     elif user_input.capitalize() == "Right":
       print("You walk past a large drum of radioactive waste. \n"
             "This door must lead to the Nuclear Plant...")
