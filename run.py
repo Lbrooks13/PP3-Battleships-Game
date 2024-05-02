@@ -90,27 +90,27 @@ def stairs():
         user_input = ""
     while user_input.capitalize() not in directions:
         if SECRET_1:
-          print("Options: backward/forward")
+            print("Options: backward/forward")
         else:
-          print("Options: right/backward/forward/exit")
+            print("Options: right/backward/forward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Right":
-          if not SECRET_1:
-            secret_A()
-          else:
-            print("You have already operated this switch")
+            if not SECRET_1:
+              secret_A()
+            else:
+              print("You have already operated this switch")
         elif user_input.capitalize() == "Backward":
-          print("You are travelling towards the Main Hall")
-          input(continue_game)
-          intro()
-        elif user_input.capitalize() == "Forward":
-          if not WEAPON:
-            weapon_room()
-          else:
-            print("You have already found the shotgun, time to find some /n"
-                  "fresh meat...")
+            print("You are travelling towards the Main Hall")
             input(continue_game)
-            stairs()
+            intro()
+        elif user_input.capitalize() == "Forward":
+            if not WEAPON:
+              weapon_room()
+            else:
+                print("You have already found the shotgun, time to find some /n"
+                      "fresh meat...")
+                input(continue_game)
+                stairs()
         elif user_input.capitalize() == "Exit":
           exit_game()
         else:
