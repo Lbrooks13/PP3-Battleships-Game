@@ -112,9 +112,9 @@ def stairs():
                 input(continue_game)
                 stairs()
         elif user_input.capitalize() == "Exit":
-          exit_game()
+            exit_game()
         else:
-          print(valid_option)
+            print(valid_option)
 
 
 #  Secret A
