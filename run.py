@@ -53,17 +53,17 @@ def intro():
         print("Options: left/right/backward/forward/exit")
         user_input = input("Make your selection: ").capitalize()
         if user_input == "Left":
-          stairs()
+            stairs()
         elif user_input == "Right":
-          courtyard()
+            courtyard()
         elif user_input == "Forward":
-          enemy_room()
+            enemy_room()
         elif user_input == "Backward":
-          print("You can't chicken out now, Marine.")
+            print("You can't chicken out now, Marine.")
         elif user_input == "Exit":
-          exit_game()
+            exit_game()
         else:
-          print(valid_option)
+            print(valid_option)
 
 
 #  Stairs
