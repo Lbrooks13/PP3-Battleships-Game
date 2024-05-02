@@ -69,6 +69,7 @@ def intro():
 
 def stairs():
   global SECRET_1
+  global WEAPON
   clear_terminal()
   if SECRET_1:
     directions = ['Forward', 'Backward']
@@ -103,7 +104,13 @@ def stairs():
       input(continue_game)
       intro()
     elif user_input.capitalize() == "Forward":
-      weapon_room()
+      if not WEAPON:
+        weapon_room()
+      else:
+        print("You have already found the shotgun, time to find some /n"
+              "fresh meat...")
+        input(continue_game)
+        stairs()
     elif user_input.capitalize() == "Exit":
       exit_game()  
     else :
@@ -428,11 +435,11 @@ def exit_level():
   print("Thank you for playing MooD!")
   time.sleep(1)
   print("Redirecting to Main Menu")
-  time.sleep(2)
+  time.sleep(1.5)
   print(". ")
-  time.sleep(2)
+  time.sleep(1.5)
   print(". ")
-  time.sleep(2)
+  time.sleep(1.5)
   print(". ")
   input(continue_game)
   start()          
@@ -451,11 +458,24 @@ def start():
   SECRET_2 = False
   clear_terminal()
   print("Welcome to MooD")
+  time.sleep(0.5)
+  print("MooD is a text-based adventure")
+  time.sleep(0.5)
   print("You are a space marine, stranded on Mars.")
+  time.sleep(0.5)
   print("From behind a huge door you hear snarling and the cries of your \n"
         "former marine comrades being devoured by demons.")
+  time.sleep(0.5)
   print("You must maneuver through the Mars base to find safety. \n")
+  time.sleep(0.5)
   print("You can choose to walk in multiple directions to find a way out.")
+  time.sleep(0.5)
+  print("Each room will provide you with a description of your surroundings/n"
+        "along with the directions you can look")
+  time.sleep(0.5)
+  print("There are 2 secret areas to find.")
+  time.sleep(0.5)
+  print("Also, there's demons inside. Make sure you find a weapon")
   while True:
     callsign = input("Let's start with your callsign: ")
     clear_terminal()
@@ -465,6 +485,7 @@ def start():
     else:
       print(f"{callsign} is not valid. Please use letters only.")
   print("Entering: 'The Hangar'...")
+  time.sleep(0.5)
   print("For a truly immersive experience please open this link in your web \n"
         "browser whilst playing the game \n"
         "'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
