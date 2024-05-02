@@ -73,9 +73,9 @@ def stairs():
     global WEAPON
     clear_terminal()
     if SECRET_1:
-        directions = ['Forward', 'Backward']
+        directions = ['Forward', 'Backward', 'Exit']
     else:
-        directions = ['Forward', 'Backward', 'Right']
+        directions = ['Forward', 'Backward', 'Right', 'Exit']
     print(
         "You are stood at the foot of a large staircase.\n"
         "At the top you see a window. Beyond it, \n"
@@ -203,7 +203,7 @@ def enemy_room():
     print("Behind you is the giant steel door heading back to the main hall.")
     user_input = ""
     while user_input.capitalize() not in directions:
-        print("Options: forward/right/backward")
+        print("Options: forward/right/backward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Backward":
             print("You turn around and go back through the giant steel door.\n"
@@ -303,29 +303,28 @@ def imp_room():
     print("The giant door raises up. You are now stood in a tall room.")
     time.sleep(0.5)
     print("Above you there is a window overlooking the area. \n"
-          "You can just make-out something wandering through the room")
+          "You can just make-out something wandering aimlessly through the room")
     time.sleep(0.5)
     print("Is it human?")
     time.sleep(0.5)
-    print("Infront of you is a small door with a yellow sign on it. \n"
+    print("Infront of you is a small door with a yellow sign on the door. \n"
           "'BIOLOGICAL HAZZARD : BEWARE'.")
     time.sleep(0.5)
     print("To your left is a skull shaped switch on the door.")
     time.sleep(0.5)
-    print("To your right is a small door. A red exit sign is hung above.")
+    print ("To your right is a small door. A red exit sign is hung above.")
     time.sleep(0.5)
     print("Behind you is the door back to the previous room.")
     user_input = ""
     while user_input.capitalize() not in directions:
         if SECRET_2:
             print("Options: forward/backward/right/exit")
-        else:
+        else:  
             print("Options : forward/backward/left/right/exit")
-            user_input = input("Make your selection: ")
+        user_input = input("Make your selection: ")
         if user_input.capitalize() == "Forward":
-            print("You walk up to the biohazard door. \n"
-                  "There is a small green button to your right.\n"
-                  "You press it and the door slides open.")
+            print("You walk up to the biohazard door. There is a small green button \n"
+                  "to your right. You press it and the door slides open.")
             input(continue_game)
             poison_room()
         elif user_input.capitalize() == "Left":
@@ -345,9 +344,9 @@ def imp_room():
             input(continue_game)
             enemy_room()
         elif user_input.capitalize() == "Exit":
-            exit_game()
-        else:
-            print(valid_option)
+            exit_game()  
+        else :
+            print(valid_option)    
 
 
 #  Secret B
@@ -424,29 +423,29 @@ def exit_level():
         print("You didnt find any weapons.")
     if SECRET_1 and SECRET_2:
         print("Secrets : 100%")
-    elif SECRET_1 or SECRET_2:
+    elif SECRET_1 or SECRET_2:  
         print("Secrets : 50%")
     else:
         print("Secrets : 0%")
-        print("You didnt find any secrets.")
+        print ("You didnt find any secrets.")
     if not WEAPON and not SECRET_1 and not SECRET_2:
         print("Back to basic training for you marine.....")
-        time.sleep(1)
-        print("Entering : Nuclear Plant...")
-        time.sleep(1)
-        print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
-        time.sleep(1)
-        print("Thank you for playing MooD!")
-        time.sleep(1)
-        print("Redirecting to Main Menu")
-        time.sleep(1.5)
-        print(". ")
-        time.sleep(1.5)
-        print(". ")
-        time.sleep(1.5)
-        print(". ")
-        input(continue_game)
-        start()
+    time.sleep(1)
+    print("Entering : Nuclear Plant...")
+    time.sleep(1)
+    print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
+    time.sleep(1)
+    print("Thank you for playing MooD!")
+    time.sleep(1)
+    print("Redirecting to Main Menu")
+    time.sleep(1.5)
+    print(". ")
+    time.sleep(1.5)
+    print(". ")
+    time.sleep(1.5)
+    print(". ")
+    input(continue_game)
+    start()          
 
 
 #  -- Title Card --
