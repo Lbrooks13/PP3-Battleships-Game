@@ -115,6 +115,7 @@ This package is used to create a pause between terminal print outs. I felt that 
 ## Validator Testing
 
 The program successfully passed through Python Linter with 0 warnings returned.
+![Linter](https://i.ibb.co/6gknhS4/linter.png)
 
 ## Deployment
 

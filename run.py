@@ -81,7 +81,7 @@ def stairs():
         "At the top you see a window. Beyond it, \n"
         "there is nothing but the harsh red wasteland of Mars.")
     time.sleep(0.5)
-    print("You wonder how on earth you're ever going to get home from this hell.")
+    print("You wonder how you're ever going to get home from this hell.")
     time.sleep(0.5)
     print("To your right there is hidden alcove next to the stairs.")
     time.sleep(0.5)
@@ -92,14 +92,14 @@ def stairs():
     while user_input.capitalize() not in directions:
         if SECRET_1:
             print("Options: backward/forward")
-        else:  
+        else:
             print("Options: right/backward/forward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Right":
             if not SECRET_1:
                 secret_A()
             else:
-                print("You have already operated this switch")  
+                print("You have already operated this switch")
         elif user_input.capitalize() == "Backward":
             print("You are travelling towards the Main Hall")
             input(continue_game)
@@ -108,14 +108,14 @@ def stairs():
             if not WEAPON:
                 weapon_room()
             else:
-                print("You have already found the shotgun, time to find some \n"
+                print("You have already found the shotgun, time to find some\n"
                       "fresh meat...")
                 input(continue_game)
                 stairs()
         elif user_input.capitalize() == "Exit":
-            exit_game()  
-        else :
-            print(valid_option)  
+            exit_game()
+        else:
+            print(valid_option)
 
 
 #  Secret A
@@ -139,11 +139,11 @@ def secret_A():
         print("Options: backward")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Backward":
-          print("You step back and the switch returns to its normal state")
-          input(continue_game)
-          stairs()
+            print("You step back and the switch returns to its normal state")
+            input(continue_game)
+            stairs()
         else:
-          print(valid_option)
+            print(valid_option)
 
 
 #  Weapon Room
@@ -269,9 +269,9 @@ def soldier_room():
                 input(continue_game)
                 enemy_room()
             else:
-                print("You rookie. You went and brought a knife to a gun fight.")
+                print("Rookie, you went and brought a knife to a gun fight.")
                 time.sleep(0.5)
-                print("The soldiers charge at you and begin dismembering you \n"
+                print("The soldiers charge at you and begin to dismember you\n"
                       "whilst you're still alive...")
                 time.sleep(0.5)
                 print("It's dangerous to go alone, \n"
@@ -303,7 +303,7 @@ def imp_room():
     print("The giant door raises up. You are now stood in a tall room.")
     time.sleep(0.5)
     print("Above you there is a window overlooking the area. \n"
-          "You can just make-out something wandering aimlessly through the room")
+          "You can make-out something wandering aimlessly through the room")
     time.sleep(0.5)
     print("Is it human?")
     time.sleep(0.5)
@@ -312,19 +312,20 @@ def imp_room():
     time.sleep(0.5)
     print("To your left is a skull shaped switch on the door.")
     time.sleep(0.5)
-    print ("To your right is a small door. A red exit sign is hung above.")
+    print("To your right is a small door. A red exit sign is hung above.")
     time.sleep(0.5)
     print("Behind you is the door back to the previous room.")
     user_input = ""
     while user_input.capitalize() not in directions:
         if SECRET_2:
             print("Options: forward/backward/right/exit")
-        else:  
+        else:
             print("Options : forward/backward/left/right/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Forward":
-            print("You walk up to the biohazard door. There is a small green button \n"
-                  "to your right. You press it and the door slides open.")
+            print("You walk up to the biohazard door. \n"
+                  "There is a small green button to your right.\n"
+                  "You press it and the door slides open.")
             input(continue_game)
             poison_room()
         elif user_input.capitalize() == "Left":
@@ -344,9 +345,9 @@ def imp_room():
             input(continue_game)
             enemy_room()
         elif user_input.capitalize() == "Exit":
-            exit_game()  
-        else :
-            print(valid_option)    
+            exit_game()
+        else:
+            print(valid_option)
 
 
 #  Secret B
@@ -423,11 +424,11 @@ def exit_level():
         print("You didnt find any weapons.")
     if SECRET_1 and SECRET_2:
         print("Secrets : 100%")
-    elif SECRET_1 or SECRET_2:  
+    elif SECRET_1 or SECRET_2:
         print("Secrets : 50%")
     else:
         print("Secrets : 0%")
-        print ("You didnt find any secrets.")
+        print("You didnt find any secrets.")
     if not WEAPON and not SECRET_1 and not SECRET_2:
         print("Back to basic training for you marine.....")
     time.sleep(1)
@@ -445,7 +446,7 @@ def exit_level():
     time.sleep(1.5)
     print(". ")
     input(continue_game)
-    start()          
+    start()
 
 
 #  -- Title Card --
@@ -480,13 +481,13 @@ def start():
     time.sleep(0.5)
     print("Also, there's demons inside. Make sure you find a weapon")
     while True:
-      callsign = input("Let's start with your callsign: ")
-      clear_terminal()
-      if callsign.isalpha():
-        print("Good luck, "+callsign+".")
-        break
-      else:
-        print(f"{callsign} is not valid. Please use letters only.")
+        callsign = input("Let's start with your callsign: ")
+        clear_terminal()
+        if callsign.isalpha():
+          print("Good luck, "+callsign+".")
+          break
+        else:
+          print(f"{callsign} is not valid. Please use letters only.")
     print("Entering: 'The Hangar'...")
     time.sleep(0.5)
     print("For a truly immersive experience,\n"
