@@ -27,6 +27,7 @@ def exit_game():
 
 #  Main Hall
 
+
 def intro():
     clear_terminal()
     directions = ['Left', 'Forward','Right', 'Exit']
@@ -255,32 +256,33 @@ def soldier_room():
                 "drop a cartridge in each barrel, \n"
                 "and unleash hell upon your former team-mates")
           time.sleep(1.5)
-          print("After blowing a hole clean through the first soliders chest, \n"
-                "you reload.")
+          print("You blow a hole through the first soliders chest, \n"
+                "then you reload.")
           time.sleep(1.5)
           print("You run towards the second marine, \n"
                 "shoving the end of the barrel in his snarling mouth. \n"
                 "You squeeze the trigger and redecorate the east wall \n"
                 "with whats left of his brains")
           time.sleep(1.5)
-          print("Satisfied with your kills, you head back towards the square \n"
-                "room. Let's find out whats behind door number 2...")
+          print("Satisfied, you head back towards the square room.\n"
+                "Let's find out whats behind door number 2...")
           input(continue_game)
           enemy_room()
         else:
           print("You rookie. You went and brought a knife to a gun fight.")
           time.sleep(0.5)
-          print("The soldiers charge at you and begin dismembering you whilst \n"
-                "you're still alive...")
+          print("The soldiers charge at you and begin dismembering you \n"
+                "whilst you're still alive...")
           time.sleep(0.5)
-          print("It's dangerous to go alone, you should have found a weapon...")
+          print("It's dangerous to go alone, \n"
+                "you should have found a weapon...")
           time.sleep(0.5)
           print("YOU HAVE DIED")
           input(continue_game)
           start()
       elif user_input.capitalize() == "Run":
-        print("You know when you're out-gunned. Maybe you should arm yourself \n"
-              "before taking these guys on.")
+        print("You know when you're out-gunned.\n"
+              "Maybe you should arm yourself before taking these guys on.")
         input(continue_game)
         enemy_room()
       elif user_input.capitalize() == "Exit":
@@ -301,11 +303,11 @@ def imp_room():
     print("The giant door raises up. You are now stood in a tall room.")
     time.sleep(0.5)
     print("Above you there is a window overlooking the area. \n"
-          "You can just make-out something wandering aimlessly through the room")
+          "You can just make-out something wandering through the room")
     time.sleep(0.5)
     print("Is it human?")
     time.sleep(0.5)
-    print("Infront of you is a small door with a yellow sign on the door. \n"
+    print("Infront of you is a small door with a yellow sign on it. \n"
           "'BIOLOGICAL HAZZARD : BEWARE'.")
     time.sleep(0.5)
     print("To your left is a skull shaped switch on the door.")
@@ -321,8 +323,9 @@ def imp_room():
         print("Options : forward/backward/left/right/exit")
       user_input = input("Make your selection: ")
       if user_input.capitalize() == "Forward":
-        print("You walk up to the biohazard door. There is a small green button \n"
-              "to your right. You press it and the door slides open.")
+        print("You walk up to the biohazard door. \n"
+              "There is a small green button to your right.\n"
+              "You press it and the door slides open.")
         input(continue_game)
         poison_room()
       elif user_input.capitalize() == "Left":
@@ -471,8 +474,8 @@ def start():
     time.sleep(0.5)
     print("You can choose to walk in multiple directions to find a way out.")
     time.sleep(0.5)
-    print("Each room will provide you with a description of your surroundings/n"
-          "along with the directions you can look")
+    print("Each room will provide you with a description of your \n"
+          "surroundings along with the directions you can look")
     time.sleep(0.5)
     print("There are 2 secret areas to find.")
     time.sleep(0.5)
@@ -487,8 +490,8 @@ def start():
         print(f"{callsign} is not valid. Please use letters only.")
     print("Entering: 'The Hangar'...")
     time.sleep(0.5)
-    print("For a truly immersive experience please open this link in your web \n"
-          "browser whilst playing the game \n"
+    print("For a truly immersive experience,\n"
+          "please open this link in your web browser whilst playing.\n"
           "'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
     input(continue_game)
     intro()
