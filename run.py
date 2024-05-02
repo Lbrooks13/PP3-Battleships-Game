@@ -75,20 +75,19 @@ def stairs():
     if SECRET_1:
         directions = ['Forward', 'Backward']
     else:
-      directions = ['Forward', 'Backward', 'Right']
-    print(
-      "You are stood at the foot of a large staircase.\n"
-      "At the top you see a window. Beyond it, \n"
-      "there is nothing but the harsh red wasteland of Mars.")
-    time.sleep(0.5)
-    print("You wonder how you're ever going to get home from this hell.")
-    time.sleep(0.5)
-    print("To your right there is hidden alcove next to the stairs.")
-    time.sleep(0.5)
-    print("Behind you is the door back to the main hall.")
-    time.sleep(0.5)
-    print("Infront of you is the staircase.")
-    user_input = ""
+        directions = ['Forward', 'Backward', 'Right']
+        print("You are stood at the foot of a large staircase.\n"
+              "At the top you see a window. Beyond it, \n"
+              "there is nothing but the harsh red wasteland of Mars.")
+        time.sleep(0.5)
+        print("You wonder how you're ever going to get home from this hell.")
+        time.sleep(0.5)
+        print("To your right there is hidden alcove next to the stairs.")
+        time.sleep(0.5)
+        print("Behind you is the door back to the main hall.")
+        time.sleep(0.5)
+        print("Infront of you is the staircase.")
+        user_input = ""
     while user_input.capitalize() not in directions:
         if SECRET_1:
           print("Options: backward/forward")
@@ -495,5 +494,6 @@ def start():
           "'https://www.youtube.com/watch?v=MEYxYcLi1lc' ")
     input(continue_game)
     intro()
+
 
 start()
