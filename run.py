@@ -2,7 +2,7 @@ import os
 import time
 
 
- #  -- Variables --
+#  -- Variables --
 
 continue_game = "\nPress Enter to continue"
 valid_option = "\nPlease Enter A Valid Option"
@@ -11,9 +11,9 @@ global SECRET_2
 global WEAPON
 
 
- #  -- Functions --
+#  -- Functions --
 
- #  Clear terminal
+#  Clear terminal
 def clear_terminal() :
   os.system('cls' if os.name == "nt" else "clear")
 
@@ -23,9 +23,9 @@ def exit_game():
   print("Don't worry, i'm scared of the dark too...\n")
   exit()
 
- #  -- Levels -- 
+#  -- Levels -- 
 
- #  Main Hall
+#  Main Hall
 
 def intro():
   clear_terminal()
@@ -65,7 +65,7 @@ def intro():
       print(valid_option)
 
 
- #  Stairs
+#  Stairs
 
 def stairs():
   global SECRET_1
@@ -117,7 +117,7 @@ def stairs():
       print(valid_option)  
 
 
- #  Secret A
+#  Secret A
 
 def secret_A():
   clear_terminal()
@@ -145,7 +145,7 @@ def secret_A():
       print(valid_option)
 
 
- #  Weapon Room
+#  Weapon Room
 
 def weapon_room():
   clear_terminal()
@@ -182,7 +182,7 @@ def weapon_room():
       print(valid_option)
 
 
- #  Enemy Room
+#  Enemy Room
 
 def enemy_room():
   clear_terminal()
@@ -232,7 +232,7 @@ def enemy_room():
       print(valid_option)
 
 
- #  Soldier Room
+#  Soldier Room
 
 def soldier_room():
   global WEAPON
@@ -288,7 +288,7 @@ def soldier_room():
       print(valid_option)
 
 
- #  Imp Room
+#  Imp Room
 
 def imp_room():
   global SECRET_2
@@ -346,7 +346,7 @@ def imp_room():
       print(valid_option)    
 
 
- #  Secret B
+#  Secret B
 
 def secret_B():
   clear_terminal()
@@ -374,7 +374,7 @@ def secret_B():
       print(valid_option)
 
 
- #  Poison Room
+#  Poison Room
 
 def poison_room():
   clear_terminal()
@@ -392,7 +392,7 @@ def poison_room():
   start()
 
 
- #  courtyard
+#  courtyard
 
 def courtyard():
   clear_terminal()
@@ -406,7 +406,7 @@ def courtyard():
   intro()
 
 
- #  exit
+#  exit
 
 def exit_level():
   global WEAPON
@@ -445,9 +445,9 @@ def exit_level():
   start()          
 
 
- #  -- Title Card -- 
+#  -- Title Card -- 
 
- #  Intro Scene
+#  Intro Scene
 
 def start():
   global WEAPON
