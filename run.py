@@ -76,45 +76,46 @@ def stairs():
         directions = ['Forward', 'Backward']
     else:
         directions = ['Forward', 'Backward', 'Right']
-        print("You are stood at the foot of a large staircase.\n"
-              "At the top you see a window. Beyond it, \n"
-              "there is nothing but the harsh red wasteland of Mars.")
-        time.sleep(0.5)
-        print("You wonder how you're ever going to get home from this hell.")
-        time.sleep(0.5)
-        print("To your right there is hidden alcove next to the stairs.")
-        time.sleep(0.5)
-        print("Behind you is the door back to the main hall.")
-        time.sleep(0.5)
-        print("Infront of you is the staircase.")
-        user_input = ""
+    print(
+        "You are stood at the foot of a large staircase.\n"
+        "At the top you see a window. Beyond it, \n"
+        "there is nothing but the harsh red wasteland of Mars.")
+    time.sleep(0.5)
+    print("You wonder how on earth you're ever going to get home from this hell.")
+    time.sleep(0.5)
+    print("To your right there is hidden alcove next to the stairs.")
+    time.sleep(0.5)
+    print("Behind you is the door back to the main hall.")
+    time.sleep(0.5)
+    print("Infront of you is the staircase.")
+    user_input = ""
     while user_input.capitalize() not in directions:
         if SECRET_1:
             print("Options: backward/forward")
-        else:
+        else:  
             print("Options: right/backward/forward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Right":
             if not SECRET_1:
-              secret_A()
+                secret_A()
             else:
-              print("You have already operated this switch")
+                print("You have already operated this switch")  
         elif user_input.capitalize() == "Backward":
             print("You are travelling towards the Main Hall")
             input(continue_game)
             intro()
         elif user_input.capitalize() == "Forward":
             if not WEAPON:
-              weapon_room()
+                weapon_room()
             else:
-                print("You have already found the shotgun, time to find some /n"
+                print("You have already found the shotgun, time to find some \n"
                       "fresh meat...")
                 input(continue_game)
                 stairs()
         elif user_input.capitalize() == "Exit":
-            exit_game()
-        else:
-            print(valid_option)
+            exit_game()  
+        else :
+            print(valid_option)  
 
 
 #  Secret A
@@ -135,14 +136,14 @@ def secret_A():
           "Mars doesn't seem like such a bad place after all...")
     user_input = ""
     while user_input.capitalize() not in directions:
-      print("Options: backward")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Backward":
-        print("You step back and the switch returns to its normal state")
-        input(continue_game)
-        stairs()
-      else:
-        print(valid_option)
+        print("Options: backward")
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Backward":
+          print("You step back and the switch returns to its normal state")
+          input(continue_game)
+          stairs()
+        else:
+          print(valid_option)
 
 
 #  Weapon Room
@@ -171,15 +172,15 @@ def weapon_room():
     print("Behind you is the staircase.")
     user_input = ""
     while user_input.capitalize() not in directions:
-      print("Options: backward")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Backward":
-        print("You walk down the stairs.\n"
-              "Time to head into the base...")
-        input(continue_game)
-        stairs()
-      else:
-        print(valid_option)
+        print("Options: backward")
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Backward":
+            print("You walk down the stairs.\n"
+                  "Time to head into the base...")
+            input(continue_game)
+            stairs()
+        else:
+            print(valid_option)
 
 
 #  Enemy Room
@@ -202,35 +203,35 @@ def enemy_room():
     print("Behind you is the giant steel door heading back to the main hall.")
     user_input = ""
     while user_input.capitalize() not in directions:
-      print("Options: forward/right/backward")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Backward":
-        print("You turn around and go back through the giant steel door.\n"
-              "You are now travelling towards the Main Hall")
-        input(continue_game)
-        intro()
-      elif user_input.capitalize() == "Forward":
-        print("You walk towards the door infront of you.\n"
-              "You can hear footsteps beyond the door.\n"
-              "They sound like marching boots on a metal floor.")
-        time.sleep(0.5)
-        print("Could it be your team? Are they still alive?")
-        input(continue_game)
-        soldier_room()
-      elif user_input.capitalize() == "Right":
-        print("You walk towards another giant steel door on your right.\n"
-              "You go to press the button to open it,\n"
-              "but as you do you hear the sound of screams.")
-        time.sleep(0.5)
-        print("A snarl is the only clue of what awaits behind the door.\n"
-              "But whatever it is, \n"
-              "it doesnt sound like anything born of Earth...")
-        input(continue_game)
-        imp_room()
-      elif user_input.capitalize() == "Exit":
-        exit_game()
-      else:
-        print(valid_option)
+        print("Options: forward/right/backward")
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Backward":
+            print("You turn around and go back through the giant steel door.\n"
+                  "You are now travelling towards the Main Hall")
+            input(continue_game)
+            intro()
+        elif user_input.capitalize() == "Forward":
+            print("You walk towards the door infront of you.\n"
+                  "You can hear footsteps beyond the door.\n"
+                  "They sound like marching boots on a metal floor.")
+            time.sleep(0.5)
+            print("Could it be your team? Are they still alive?")
+            input(continue_game)
+            soldier_room()
+        elif user_input.capitalize() == "Right":
+            print("You walk towards another giant steel door on your right.\n"
+                  "You go to press the button to open it,\n"
+                  "but as you do you hear the sound of screams.")
+            time.sleep(0.5)
+            print("A snarl is the only clue of what awaits behind the door.\n"
+                  "But whatever it is, \n"
+                  "it doesnt sound like anything born of Earth...")
+            input(continue_game)
+            imp_room()
+        elif user_input.capitalize() == "Exit":
+            exit_game()
+        else:
+            print(valid_option)
 
 
 #  Soldier Room
@@ -247,47 +248,47 @@ def soldier_room():
           "their mouths dripping with blood")
     user_input = ""
     while user_input.capitalize() not in directions:
-      print("Options: fight/run")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Fight":
-        if WEAPON:
-          print("You pull the shotgun from you back, \n"
-                "drop a cartridge in each barrel, \n"
-                "and unleash hell upon your former team-mates")
-          time.sleep(1.5)
-          print("You blow a hole through the first soliders chest, \n"
-                "then you reload.")
-          time.sleep(1.5)
-          print("You run towards the second marine, \n"
-                "shoving the end of the barrel in his snarling mouth. \n"
-                "You squeeze the trigger and redecorate the east wall \n"
-                "with whats left of his brains")
-          time.sleep(1.5)
-          print("Satisfied, you head back towards the square room.\n"
-                "Let's find out whats behind door number 2...")
-          input(continue_game)
-          enemy_room()
+        print("Options: fight/run")
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Fight":
+            if WEAPON:
+                print("You pull the shotgun from you back, \n"
+                      "drop a cartridge in each barrel, \n"
+                      "and unleash hell upon your former team-mates")
+                time.sleep(1.5)
+                print("You blow a hole through the first soliders chest, \n"
+                      "then you reload.")
+                time.sleep(1.5)
+                print("You run towards the second marine, \n"
+                      "shoving the end of the barrel in his snarling mouth. \n"
+                      "You squeeze the trigger and redecorate the east wall \n"
+                      "with whats left of his brains")
+                time.sleep(1.5)
+                print("Satisfied, you head back towards the square room.\n"
+                      "Let's find out whats behind door number 2...")
+                input(continue_game)
+                enemy_room()
+            else:
+                print("You rookie. You went and brought a knife to a gun fight.")
+                time.sleep(0.5)
+                print("The soldiers charge at you and begin dismembering you \n"
+                      "whilst you're still alive...")
+                time.sleep(0.5)
+                print("It's dangerous to go alone, \n"
+                      "you should have found a weapon...")
+                time.sleep(0.5)
+                print("YOU HAVE DIED")
+                input(continue_game)
+                start()
+        elif user_input.capitalize() == "Run":
+            print("You know when you're out-gunned.\n"
+                  "Maybe you should arm yourself before taking these guys on.")
+            input(continue_game)
+            enemy_room()
+        elif user_input.capitalize() == "Exit":
+            exit_game()
         else:
-          print("You rookie. You went and brought a knife to a gun fight.")
-          time.sleep(0.5)
-          print("The soldiers charge at you and begin dismembering you \n"
-                "whilst you're still alive...")
-          time.sleep(0.5)
-          print("It's dangerous to go alone, \n"
-                "you should have found a weapon...")
-          time.sleep(0.5)
-          print("YOU HAVE DIED")
-          input(continue_game)
-          start()
-      elif user_input.capitalize() == "Run":
-        print("You know when you're out-gunned.\n"
-              "Maybe you should arm yourself before taking these guys on.")
-        input(continue_game)
-        enemy_room()
-      elif user_input.capitalize() == "Exit":
-        exit_game()
-      else:
-        print(valid_option)
+            print(valid_option)
 
 
 #  Imp Room
@@ -296,9 +297,9 @@ def imp_room():
     global SECRET_2
     clear_terminal()
     if SECRET_2:
-      directions = ['Forward', 'Backward', 'Right', 'Exit']
+        directions = ['Forward', 'Backward', 'Right', 'Exit']
     else:
-      directions = ['Forward', 'Backward', 'Right', 'Left', 'Exit']
+        directions = ['Forward', 'Backward', 'Right', 'Left', 'Exit']
     print("The giant door raises up. You are now stood in a tall room.")
     time.sleep(0.5)
     print("Above you there is a window overlooking the area. \n"
@@ -316,37 +317,37 @@ def imp_room():
     print("Behind you is the door back to the previous room.")
     user_input = ""
     while user_input.capitalize() not in directions:
-      if SECRET_2:
-        print("Options: forward/backward/right/exit")
-      else:
-        print("Options : forward/backward/left/right/exit")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Forward":
-        print("You walk up to the biohazard door. \n"
-              "There is a small green button to your right.\n"
-              "You press it and the door slides open.")
-        input(continue_game)
-        poison_room()
-      elif user_input.capitalize() == "Left":
-        if not SECRET_2:
-          secret_B()
-          print("You turn to face the skull shaped switch.")
+        if SECRET_2:
+            print("Options: forward/backward/right/exit")
         else:
-          print("You have already operated this switch")
-        input(continue_game)
-      elif user_input.capitalize() == "Right":
-        print("You walk past a large drum of radioactive waste. \n"
-              "This door must lead to the Nuclear Plant...")
-        input(continue_game)
-        exit_level()
-      elif user_input.capitalize() == "Backward":
-        print("You turn around and head back towards the previous room.")
-        input(continue_game)
-        enemy_room()
-      elif user_input.capitalize() == "Exit":
-        exit_game()
-      else:
-        print(valid_option)
+            print("Options : forward/backward/left/right/exit")
+            user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Forward":
+            print("You walk up to the biohazard door. \n"
+                  "There is a small green button to your right.\n"
+                  "You press it and the door slides open.")
+            input(continue_game)
+            poison_room()
+        elif user_input.capitalize() == "Left":
+            if not SECRET_2:
+                secret_B()
+                print("You turn to face the skull shaped switch.")
+            else:
+                print("You have already operated this switch")
+                input(continue_game)
+        elif user_input.capitalize() == "Right":
+            print("You walk past a large drum of radioactive waste. \n"
+                  "This door must lead to the Nuclear Plant...")
+            input(continue_game)
+            exit_level()
+        elif user_input.capitalize() == "Backward":
+            print("You turn around and head back towards the previous room.")
+            input(continue_game)
+            enemy_room()
+        elif user_input.capitalize() == "Exit":
+            exit_game()
+        else:
+            print(valid_option)
 
 
 #  Secret B
@@ -368,13 +369,13 @@ def secret_B():
     print("Options: backward")
     user_input = ""
     while user_input.capitalize() not in directions:
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Backward":
-        print("You turn around to face the tall room.")
-        input(continue_game)
-        imp_room()
-      else:
-        print(valid_option)
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Backward":
+            print("You turn around to face the tall room.")
+            input(continue_game)
+            imp_room()
+        else:
+            print(valid_option)
 
 
 #  Poison Room
@@ -418,34 +419,34 @@ def exit_level():
     clear_terminal()
     print("Hangar : Finished")
     if WEAPON:
-      print("You found the Shotgun.")
+        print("You found the Shotgun.")
     else:
-      print("You didnt find any weapons.")
+        print("You didnt find any weapons.")
     if SECRET_1 and SECRET_2:
-      print("Secrets : 100%")
+        print("Secrets : 100%")
     elif SECRET_1 or SECRET_2:
-      print("Secrets : 50%")
+        print("Secrets : 50%")
     else:
-      print("Secrets : 0%")
-      print("You didnt find any secrets.")
+        print("Secrets : 0%")
+        print("You didnt find any secrets.")
     if not WEAPON and not SECRET_1 and not SECRET_2:
-      print("Back to basic training for you marine.....")
-    time.sleep(1)
-    print("Entering : Nuclear Plant...")
-    time.sleep(1)
-    print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
-    time.sleep(1)
-    print("Thank you for playing MooD!")
-    time.sleep(1)
-    print("Redirecting to Main Menu")
-    time.sleep(1.5)
-    print(". ")
-    time.sleep(1.5)
-    print(". ")
-    time.sleep(1.5)
-    print(". ")
-    input(continue_game)
-    start()
+        print("Back to basic training for you marine.....")
+        time.sleep(1)
+        print("Entering : Nuclear Plant...")
+        time.sleep(1)
+        print("ERROR : 404 'Liam hasn't bothered making anymore levels'")
+        time.sleep(1)
+        print("Thank you for playing MooD!")
+        time.sleep(1)
+        print("Redirecting to Main Menu")
+        time.sleep(1.5)
+        print(". ")
+        time.sleep(1.5)
+        print(". ")
+        time.sleep(1.5)
+        print(". ")
+        input(continue_game)
+        start()
 
 
 #  -- Title Card --
@@ -469,7 +470,7 @@ def start():
     print("From behind a huge door you hear snarling and the cries of your \n"
           "former marine comrades being devoured by demons.")
     time.sleep(0.5)
-    print("You must maneuver through the Mars base to find safety. \n")
+    print("You must maneuver through the Mars base to find safety.")
     time.sleep(0.5)
     print("You can choose to walk in multiple directions to find a way out.")
     time.sleep(0.5)
