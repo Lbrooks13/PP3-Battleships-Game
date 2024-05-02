@@ -30,7 +30,7 @@ def exit_game():
 
 def intro():
     clear_terminal()
-    directions = ['Left', 'Forward','Right', 'Exit']
+    directions = ['Left', 'Forward', 'Right', 'Exit']
     print("You are stood in a large open area.")
     time.sleep(0.5)
     print("It is dimly lit, with rusted walls.")
@@ -50,20 +50,20 @@ def intro():
     time.sleep(0.5)
     user_input = ""
     while user_input.capitalize() not in directions:
-      print("Options: left/right/backward/forward/exit")
-      user_input = input("Make your selection: ").capitalize()
-      if user_input == "Left":
-        stairs()
-      elif user_input == "Right":
-        courtyard()
-      elif user_input == "Forward":
-        enemy_room()
-      elif user_input == "Backward":
-        print("You can't chicken out now, Marine.")
-      elif user_input == "Exit":
-        exit_game()
-      else:
-        print(valid_option)
+        print("Options: left/right/backward/forward/exit")
+        user_input = input("Make your selection: ").capitalize()
+        if user_input == "Left":
+          stairs()
+        elif user_input == "Right":
+          courtyard()
+        elif user_input == "Forward":
+          enemy_room()
+        elif user_input == "Backward":
+          print("You can't chicken out now, Marine.")
+        elif user_input == "Exit":
+          exit_game()
+        else:
+          print(valid_option)
 
 
 #  Stairs
@@ -73,7 +73,7 @@ def stairs():
     global WEAPON
     clear_terminal()
     if SECRET_1:
-      directions = ['Forward', 'Backward']
+        directions = ['Forward', 'Backward']
     else:
       directions = ['Forward', 'Backward', 'Right']
     print(
@@ -90,32 +90,32 @@ def stairs():
     print("Infront of you is the staircase.")
     user_input = ""
     while user_input.capitalize() not in directions:
-      if SECRET_1:
-        print("Options: backward/forward")
-      else:
-        print("Options: right/backward/forward/exit")
-      user_input = input("Make your selection: ")
-      if user_input.capitalize() == "Right":
-        if not SECRET_1:
-          secret_A()
+        if SECRET_1:
+          print("Options: backward/forward")
         else:
-          print("You have already operated this switch")
-      elif user_input.capitalize() == "Backward":
-        print("You are travelling towards the Main Hall")
-        input(continue_game)
-        intro()
-      elif user_input.capitalize() == "Forward":
-        if not WEAPON:
-          weapon_room()
-        else:
-          print("You have already found the shotgun, time to find some /n"
-                "fresh meat...")
+          print("Options: right/backward/forward/exit")
+        user_input = input("Make your selection: ")
+        if user_input.capitalize() == "Right":
+          if not SECRET_1:
+            secret_A()
+          else:
+            print("You have already operated this switch")
+        elif user_input.capitalize() == "Backward":
+          print("You are travelling towards the Main Hall")
           input(continue_game)
-          stairs()
-      elif user_input.capitalize() == "Exit":
-        exit_game()
-      else:
-        print(valid_option)
+          intro()
+        elif user_input.capitalize() == "Forward":
+          if not WEAPON:
+            weapon_room()
+          else:
+            print("You have already found the shotgun, time to find some /n"
+                  "fresh meat...")
+            input(continue_game)
+            stairs()
+        elif user_input.capitalize() == "Exit":
+          exit_game()
+        else:
+          print(valid_option)
 
 
 #  Secret A
