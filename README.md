@@ -40,36 +40,36 @@ All user input fields checked, PASS.
 
 - End of Level Tally - All outcomes from acquiring Secret A, Secret B and the Weapon must be able to display at the end of level screen. Scenarios tested :
 
-Weapon - True
-Secret A - False
+Weapon - True, 
+Secret A - False, 
 Secret B - False
 
-Weapon - True
-Secret A - True
+Weapon - True, 
+Secret A - True, 
 Secret B - False
 
-Weapon - True
-Secret A - True
+Weapon - True, 
+Secret A - True, 
 Secret B - True
 
-Weapon - False
-Secret A - True
+Weapon - False, 
+Secret A - True, 
 Secret B - True
 
-Weapon - False
-Secret A - False
+Weapon - False, 
+Secret A - False, 
 Secret B - True
 
-Weapon - False
-Secret A - False
+Weapon - False, 
+Secret A - False, 
 Secret B - False
 
-Weapon - False
-Secret A - True
+Weapon - False, 
+Secret A - True, 
 Secret B - False
 
-Weapon - False
-Secret A - False
+Weapon - False, 
+Secret A - False, 
 Secret B - True
 
 All scenarios, PASS.
@@ -99,13 +99,9 @@ Instead of using a traditional North, South, East, West control scheme, I opted 
 ### Imports
 I have used the following Python packages and/or external imported packages.
 
-- import os
+- import os : This package is used to create the clear screen function used throughout the game.
 
-This package is used to create the clear screen function used throughout the game.
-
-- import time
-
-This package is used to create a pause between terminal print outs. I felt that this added a certain level of suspense and theatrics into a game with a horror theme.
+- import time : This package is used to create a pause between terminal print outs. I felt that this added a certain level of suspense and theatrics into a game with a horror theme.
 
 ## Bugs
 
