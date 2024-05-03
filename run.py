@@ -484,10 +484,10 @@ def start():
         callsign = input("Let's start with your callsign: ")
         clear_terminal()
         if callsign.isalpha():
-          print("Good luck, "+callsign+".")
-          break
+            print("Good luck, "+callsign+".")
+            break
         else:
-          print(f"{callsign} is not valid. Please use letters only.")
+            print(f"{callsign} is not valid. Please use letters only.")
     print("Entering: 'The Hangar'...")
     time.sleep(0.5)
     print("For a truly immersive experience,\n"
