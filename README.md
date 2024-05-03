@@ -119,7 +119,59 @@ The program successfully passed through Python Linter with 0 warnings returned.
 
 ## Deployment
 
-Code Institute has provided a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser. This is to improve the accessibility of the project to others.
+This is the Code Institute [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser.
+
+Deployment steps are as follows (after account setup) :
+
+- Select New in the top-right corner of your Heroku Dashboard, and select Create new app from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select Create App.
+- From the new app Settings, click Reveal Config Vars, and set the value of KEY to PORT, and the value to 8000 then select add.
+- If using any confidential credentials, such as CREDS.JSON, then these should be pasted in the Config Variables as well.
+- Further down, to support dependencies, select Add Buildpack.
+- The order of the buildpacks is important, select Python first, then Node.js second. (if they are not in this order, you can drag them to rearrange them)
+
+Heroku requires 2 additional files in order to deploy :
+- requirements.txt
+- Procfile
+
+This command will install the needed requirements :
+- pip3 install -r requirements.txt
+
+If you have your own packages that have been installed, then the requirements file requires an update using this command :
+- pip3 freeze --local > requirements.txt
+
+The Procfile can be created with the following command :
+- echo wed: node index.js > Procfile
+
+For Heroku deployment, you need to follow these steps to connect your GitHub repository to the app:
+Either -
+- Select automatic deployment from the Heroku app.
+Or -
+- In the terminal/CLI, connect to Heroku using this command : heroku login -i
+- Set the remote for Heroku : heroku git:remote -a app_name (Replace app_name with your app name)
+- After performing the standard Git add, commit and push to GitHub, you can now type : git push heroku main
+The frontend terminal should now be connected and deployed to Heroku.
+
+### Local Deployment
+This project can be cloned or forked in order to make a local copy on your own system.
+For this you will need to install any applicable packages found within the requirements.txt file.
+- pip3 install -r requirements.txt
+
+Cloning - 
+To clone the repository :
+- Go to the [GitHub repository](https://github.com/Lbrooks13/PP3-MooD)
+- Locate the Code button and click it.
+- Select if you prefer to clone using HTTPS, SSH or GitHub CLI and click the copy button to copy thr URL to your clipboard
+- Open Git Bash or Terminal
+- Change the current working directory to the target directory
+- In your IDE terminal, type the following command to clone : git clone https://github.com/Lbrooks13/PP3-MooD.git
+- Press Enter to create your local clone.
+
+Forking -
+By forking the GitHub repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. To fork the repository :
+- Log in to GitHub and locate the [GitHub repository](https://github.com/Lbrooks13/PP3-MooD)
+- At the top of the repository, locate the Fork button.
+- You should now have a copy of the original repository in your own GitHub account.
 
 The code is stored in the following repository on my [Github page.](https://github.com/Lbrooks13/PP3-MooD)
 The app is deployed via Heroku. To run MooD in Heroku's cloud-based environment, please follow [this link.](https://mood-86e4a23b6660.herokuapp.com/)
