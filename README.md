@@ -180,3 +180,5 @@ Basic framework help courtesy of [Stack Overflow.](https://stackoverflow.com)
 Imp character name used from DooM 1993 (id software).
 
 A huge thank you to Tim Nelson for helping me with my code and for helping me with testing procedure and principles.
+
+Additonal help with deployment instructions from Jordan Boulton.
