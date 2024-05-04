@@ -9,7 +9,7 @@ valid_option = "\nPlease Enter A Valid Option"
 global SECRET_1
 global SECRET_2
 global WEAPON
-
+global KILLS
 
 #  -- Functions --
 
@@ -186,8 +186,12 @@ def weapon_room():
 #  Enemy Room
 
 def enemy_room():
+    global KILLS
     clear_terminal()
-    directions = ['Forward', 'Backward', 'Right', 'Exit']
+    if KILLS:
+        directions = ['Backward', 'Right', 'Exit']
+    else:    
+        directions = ['Forward', 'Backward', 'Right', 'Exit']
     print("You walk up to a giant steel door with a red button in the middle")
     time.sleep(0.5)
     print("You push the button and the whole door raises.")
@@ -203,7 +207,10 @@ def enemy_room():
     print("Behind you is the giant steel door heading back to the main hall.")
     user_input = ""
     while user_input.capitalize() not in directions:
-        print("Options: forward/right/backward/exit")
+        if KILLS:
+            print("Options : backward/right/exit")
+        else:    
+            print("Options: forward/right/backward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Backward":
             print("You turn around and go back through the giant steel door.\n"
@@ -211,13 +218,16 @@ def enemy_room():
             input(continue_game)
             intro()
         elif user_input.capitalize() == "Forward":
-            print("You walk towards the door infront of you.\n"
-                  "You can hear footsteps beyond the door.\n"
-                  "They sound like marching boots on a metal floor.")
-            time.sleep(0.5)
-            print("Could it be your team? Are they still alive?")
-            input(continue_game)
-            soldier_room()
+            if not KILLS:
+                print("You walk towards the door infront of you.\n"
+                      "You can hear footsteps beyond the door.\n"
+                      "They sound like marching boots on a metal floor.")
+                time.sleep(0.5)
+                print("Could it be your team? Are they still alive?")
+                input(continue_game)
+                soldier_room()
+            else:
+                print("Everyone inside is dead.")    
         elif user_input.capitalize() == "Right":
             print("You walk towards another giant steel door on your right.\n"
                   "You go to press the button to open it,\n"
@@ -238,6 +248,8 @@ def enemy_room():
 
 def soldier_room():
     global WEAPON
+    global KILLS
+    KILLS = True
     clear_terminal()
     directions = ['Fight', 'Run', 'Exit']
     print("You open the door to find a room with 2 marines inside.\n"
@@ -457,9 +469,11 @@ def start():
     global WEAPON
     global SECRET_1
     global SECRET_2
+    global KILLS
     WEAPON = False
     SECRET_1 = False
     SECRET_2 = False
+    KILLS = False
     clear_terminal()
     print("Welcome to MooD")
     time.sleep(0.5)
