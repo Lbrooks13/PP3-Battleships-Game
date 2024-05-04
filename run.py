@@ -14,6 +14,8 @@ global KILLS
 #  -- Functions --
 
 #  Clear terminal
+
+
 def clear_terminal():
     os.system('cls' if os.name == "nt" else "clear")
 
@@ -190,7 +192,7 @@ def enemy_room():
     clear_terminal()
     if KILLS:
         directions = ['Backward', 'Right', 'Exit']
-    else:    
+    else:
         directions = ['Forward', 'Backward', 'Right', 'Exit']
     print("You walk up to a giant steel door with a red button in the middle")
     time.sleep(0.5)
@@ -209,7 +211,7 @@ def enemy_room():
     while user_input.capitalize() not in directions:
         if KILLS:
             print("Options : backward/right/exit")
-        else:    
+        else:
             print("Options: forward/right/backward/exit")
         user_input = input("Make your selection: ")
         if user_input.capitalize() == "Backward":
@@ -227,7 +229,7 @@ def enemy_room():
                 input(continue_game)
                 soldier_room()
             else:
-                print("Everyone inside is dead.")    
+                print("Everyone inside is dead.")
         elif user_input.capitalize() == "Right":
             print("You walk towards another giant steel door on your right.\n"
                   "You go to press the button to open it,\n"
